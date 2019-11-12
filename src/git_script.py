@@ -38,5 +38,5 @@ def get_hash():
         return get_last_commit_hash()
 
 
-hashing = get_hash()
-file_list = get_commit_file_list(hashing)
+hash_var = get_hash()
+file_list = get_commit_file_list(hash_var)
