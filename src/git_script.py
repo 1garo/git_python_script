@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 # --*-- encoding: iso-8859-1 --*--
 
-import os
 import subprocess
-import sys
+import sys, os
 
 DELETED_FILE_TOKEN = "D\t"
 
@@ -31,22 +30,6 @@ def get_commit_file_list(hash):
     return file_list.split("\n")
 
 
-def remove_unwanted_files(file_list):
-    """remove the x\t from the file names and remove the file that have
-    been deleted"""
-    cleaned_file_list = list()
-    for file in file_list:
-        if not file[:2] == DELETED_FILE_TOKEN:
-            cleaned_file_list.append(file[2:])
-    return cleaned_file_list
-
-
-def get_script_current_path():
-    """get the scrypt current path (to lacalise the repository and open files)"""
-    pathname = os.path.dirname(sys.argv[0])
-    return os.path.abspath(pathname)
-
-
 def get_hash():
     """Allow you to launch the script in command line with any hash"""
     if len(sys.argv) > 1:
@@ -57,4 +40,3 @@ def get_hash():
 
 hashing = get_hash()
 file_list = get_commit_file_list(hashing)
-# file_list = remove_unwanted_files(file_list)
