@@ -16,11 +16,6 @@ def create():
     return sys_msg
 
 
-# def get_last_commit_hash():
-#     """Get the hash of the last commited commit"""
-#     msg = os.popen("git log -n 1 master --pretty=format:\"%H\"").read()
-#
-
-
 if __name__ == '__main__':
     create()
+
