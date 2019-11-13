@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Read the README.md file for more details on how the script is working...
 import os
