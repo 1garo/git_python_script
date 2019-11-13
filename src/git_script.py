@@ -1,16 +1,9 @@
 #!/usr/bin/env python
 
-
-# hash do commit antigo a410a66cd4da793803c707d3beb3cee41e30ea8c...
+# Read the README.md file for more details on how the script is working...
 
 
 import os
-import subprocess
-import sys
-from os import path
-
-from subprocess import Popen, PIPE
-hash_value = []
 
 
 def create():
@@ -19,9 +12,6 @@ def create():
     git show --pretty=\"format:\" --name-only {commit_hash}\""
     """.format(commit_hash=commit_hash)
     sys_msg = os.system(msg)
-    # commit_commands = [msg, "status"]
-    # pwd = os.system("pwd")
-
     return sys_msg
 
 
