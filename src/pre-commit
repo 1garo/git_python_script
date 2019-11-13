@@ -20,7 +20,7 @@ def create():
 
     #sys_message = os.system(message)
     #sys_full_path = os.system(full_path)
-    return "PRINTANDO"
+    return message
 
 
 if __name__ == '__main__':
