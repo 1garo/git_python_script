@@ -13,14 +13,12 @@ import os
 def create():
     """Get the hash of the last commited commit"""
     #message = os.popen("git log -n 1 master --pretty=format:\"%H\"").read()    
-    message = os.popen("git diff --cached --name-status | cut -f2").read()
+    message = os.popen("git diff --cached --name-status | cut -f2").read().splitlines()
+    
+    for i in message:
+        full_path = os.popen("readlink -f " + message[i]).read()	
 
-
-    full_path = os.popen("readlink -f {}").format(message)read()	
-
-    sys_message = os.system(message)
-    sys_full_path = os.system(full_path)
-    return sys_full_path
+    return full_path
 
 
 if __name__ == '__main__':
