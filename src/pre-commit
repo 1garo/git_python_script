@@ -14,8 +14,7 @@ def create():
     message = os.popen("git diff --cached --name-status | cut -f2").read().splitlines()
     for i in range(len(message)):
         full_path = os.popen("readlink -f " + message[i]).read()	
-        
-    return full_path
+     	print(full_path[i])
 
 
 if __name__ == '__main__':
