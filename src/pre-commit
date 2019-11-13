@@ -13,7 +13,7 @@ import os
 def create():
     """Get the hash of the last commited commit"""
     #message = os.popen("git log -n 1 master --pretty=format:\"%H\"").read()    
-    message = os.popen("git ls-files -m").read()
+    message = os.popen("git status | grep modified").read()
 	
 
     commit_hash = message
