@@ -2,8 +2,9 @@
 
 # chmod +x ~/Documents/git_python_script/src/git_script.py
 # echo "Printing the folders that was changed by the last commit\n"
+# cd ~/Documents/git_python_script/src/git_script.py
 # ./git_script.py
-#
+# echo "\n"
 
 
 # Read the README.md file for more details on how the script is working...
