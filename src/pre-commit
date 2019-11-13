@@ -15,7 +15,7 @@ def create():
     i=0	
     for i in range(len(message)):
         full_path = os.popen("readlink -f " + message[i]).read()	
-     	print(full_path[i])
+     	print(full_path)
 
 
 if __name__ == '__main__':
