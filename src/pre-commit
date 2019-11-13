@@ -13,17 +13,14 @@ import os
 def create():
     """Get the hash of the last commited commit"""
     #message = os.popen("git log -n 1 master --pretty=format:\"%H\"").read()    
-    message = os.popen("git status --porcelain | sed s/^...//").read()
-    
-    full_path = os.popen("readlink -f pre-commit").read()	
+    message = os.popen("git diff --cached --name-status | cut -f2").read()
+    type(message)
 
-    commit_hash = message
-    msg = """
-    git show --pretty=\"format:\" --name-only {commit_hash}\""
-    """.format(commit_hash=commit_hash)
-    sys_msg = os.system(msg)
-    sys_full_path = os.system(full_path)
-    return sys_full_path
+    #full_path = os.popen("readlink -f {}").format(message)read()	
+
+    sys_message = os.system(message)
+    #sys_full_path = os.system(full_path)
+    return sys_message
 
 
 if __name__ == '__main__':
