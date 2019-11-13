@@ -6,7 +6,6 @@
 # ./git_script.py
 # echo "\n"
 
-
 # Read the README.md file for more details on how the script is working...
 import os
 
