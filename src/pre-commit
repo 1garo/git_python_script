@@ -12,17 +12,16 @@ from script_2 import *
 
 
 def create():
-    message = os.popen("git diff --cached --name-status | cut -f2").read().splitlines()
+    # message = os.popen("git diff --cached --name-status | cut -f2").read().splitlines()
     var = ["Orch_Consult_Customer/resource/transformation/DTIN_CC_Blabla.xsl",
            "Orch_Consult_Service/resource/transformation/DTIN_CC_DleDleDle.xsl",
            "Orch_Consult_Owner/resource/transformation/DTIN_CC_ClaClaCla.xsl"]
-    for i in range(len(message)):
-        # full_path = os.popen("readlink -f " + message[i]).read()
+    for i in range(len(var)):
         aux = main(var[i])
-        print(aux)
         if aux == 0:
             print(aux)
         else:
+            print("You have a problem with your commit, please check it")
             os._exit(1)
 
 

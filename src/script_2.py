@@ -6,7 +6,7 @@ def main(param):
         aux = param[i]
         name = aux.split("/", 1)[0]
 
-        if name != "XXX":
+        if name == "XXX":
             return 1
         else:
             return 0
