@@ -16,7 +16,10 @@ def create():
     var = ""
     for i in range(len(message)):
         full_path = os.popen("readlink -f " + message[i]).read()
-        var = main(full_path)
+        var = main(message[i])
+        #if var == 0:
+        #    exit(1)
+        #else:
         print(var)
 
 
