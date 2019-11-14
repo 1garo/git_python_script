@@ -8,13 +8,16 @@
 
 # Read the README.md file for more details on how the script is working...
 import os
+from script_2 import *
 
 
 def create():
     message = os.popen("git diff --cached --name-status | cut -f2").read().splitlines()
+    var = ""
     for i in range(len(message)):
         full_path = os.popen("readlink -f " + message[i]).read()
-        print(full_path)
+        var = main(full_path)
+        print(var)
 
 
 if __name__ == '__main__':
