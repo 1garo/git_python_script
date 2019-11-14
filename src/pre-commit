@@ -13,14 +13,16 @@ from script_2 import *
 
 def create():
     message = os.popen("git diff --cached --name-status | cut -f2").read().splitlines()
-    var = ""
+    var = ["Orch_Consult_Customer/resource/transformation/DTIN_CC_Blabla.xsl",
+           "Orch_Consult_Service/resource/transformation/DTIN_CC_DleDleDle.xsl",
+           "Orch_Consult_Owner/resource/transformation/DTIN_CC_ClaClaCla.xsl"]
     for i in range(len(message)):
-        full_path = os.popen("readlink -f " + message[i]).read()
-        var = main(message[i])
-        #if var == 0:
-        #    exit(1)
-        #else:
-        print(var)
+        # full_path = os.popen("readlink -f " + message[i]).read()
+        aux = main(var[i])
+        if aux == 0:
+            print(aux)
+        else:
+            os._exit(1)
 
 
 if __name__ == '__main__':
