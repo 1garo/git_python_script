@@ -2,9 +2,11 @@
 
 
 def main(param):
-    if param.endswith(".sh"):
-        return 1
-    else:
-        return 0
+    for i in range(len(param)):
+        aux = param[i]
+        name = aux.split("/", 1)[0]
 
-
+        if name != "XXX":
+            return 1
+        else:
+            return 0

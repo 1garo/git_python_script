@@ -19,6 +19,7 @@ def create():
     for i in range(len(message)):
         # full_path = os.popen("readlink -f " + message[i]).read()
         aux = main(var[i])
+        print(aux)
         if aux == 0:
             print(aux)
         else:
